@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <RootNamespace>cash_flow_api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="WeatherForecast.fs" />
+    <Compile Include="Controllers/WeatherForecastController.fs" />
+    <Compile Include="Core/Ids.fs" />
+    <Compile Include="Projection/WalletProjection.fs" />
+    <Compile Include="Output/Wallet.fs" />
+    <Compile Include="Evnets/Events.fs" />
+    <Compile Include="Evnets/EventStore.fs" />
+    <Compile Include="Commands/Wallet.fs" />
+    <Compile Include="Storage/Repository.fs" />
+    <Compile Include="Commands/Handler.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+  </ItemGroup>
+
+</Project>

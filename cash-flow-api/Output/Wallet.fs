@@ -1,6 +1,8 @@
 module Examensarbete.Output.Wallet
 
 open System
+open System.Text.Json
+open Examensarbete.Projection
 
 type Wallet =
     { id: Guid
@@ -11,3 +13,11 @@ type Wallet =
         { id = Guid.Empty
           userId = Guid.Empty
           balance = 0m }
+
+let mapWallet (wallet: WalletProjection.Wallet) : Wallet =
+    { id = wallet.id.value
+      userId = wallet.owner.value
+      balance = wallet.balance }
+
+let toJson (wallet: WalletProjection.Wallet) =
+    JsonSerializer.Serialize(mapWallet wallet)

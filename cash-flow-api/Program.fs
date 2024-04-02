@@ -38,7 +38,7 @@ module Program =
 
         app.MapPost(
             "/api/wallet",
-            Func<Http.HttpContext, Http.IResult> (fun context ->
+            Func<Http.HttpContext, Http.IResult>(fun context ->
                 let createCommand =
                     CreateWallet
                         { id = WalletId(Guid.NewGuid())
@@ -51,15 +51,14 @@ module Program =
         |> ignore
 
         app.MapPut(
-            "/api/wallet/{id}/deposit",
-            Func<Http.HttpContext, Http.IResult> (fun context id ->
+            "/api/wallet/{id: Guid}/deposit/{userId: Guid}",
+            Func<Http.HttpContext, Guid, Guid, Http.IResult>(fun context id userId ->
                 let amount = Decimal.Parse(context.Request.Query.["amount"].ToString())
-
 
                 let depositCommand =
                     DepositWallet
-                        { id = WalletId(Guid.NewGuid())
-                          owner = UserId(Guid.NewGuid())
+                        { id = WalletId(id)
+                          owner = UserId(userId)
                           amount = amount }
 
                 handle depositCommand |> ignore

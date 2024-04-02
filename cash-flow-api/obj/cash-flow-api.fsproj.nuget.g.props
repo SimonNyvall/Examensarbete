@@ -4,16 +4,16 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/nyvall/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/nyvall/.nuget/packages/</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/cap/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/cap/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.8.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="/home/nyvall/.nuget/packages/" />
+    <SourceRoot Include="/home/cap/.nuget/packages/" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_Data_SqlClient Condition=" '$(PkgMicrosoft_Data_SqlClient)' == '' ">/home/nyvall/.nuget/packages/microsoft.data.sqlclient/5.2.0</PkgMicrosoft_Data_SqlClient>
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/home/nyvall/.nuget/packages/fsharp.core/8.0.100</PkgFSharp_Core>
+    <PkgMicrosoft_Data_SqlClient Condition=" '$(PkgMicrosoft_Data_SqlClient)' == '' ">/home/cap/.nuget/packages/microsoft.data.sqlclient/5.2.0</PkgMicrosoft_Data_SqlClient>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/home/cap/.nuget/packages/fsharp.core/8.0.100</PkgFSharp_Core>
   </PropertyGroup>
 </Project>

@@ -11,7 +11,7 @@
     <Compile Include="Projection/WalletProjection.fs" />
     <Compile Include="Output/Wallet.fs" />
     <Compile Include="Evnets/Events.fs" />
-    <Compile Include="Evnets/EventStore.fs" />
+    <Compile Include="Projection/Projector.fs" />
     <Compile Include="Commands/Wallet.fs" />
     <Compile Include="Storage/Repository.fs" />
     <Compile Include="Commands/Handler.fs" />

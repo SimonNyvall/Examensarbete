@@ -17,7 +17,7 @@ let getEventStream (id: WalletId) =
 
     match storedEvents.TryFind id with
     | Some events -> events
-    | None -> failwith $"Stream with id {id} not foung"
+    | None -> failwith $"Stream with id {id} not wrong or empty"
 
 let tryAppendEvents (id: WalletId) (events: WalletEvent list) =
     printfn "Appending event %A to repository" events
@@ -34,5 +34,5 @@ let tryAppendEvents (id: WalletId) (events: WalletEvent list) =
     try
         appendEvents
         Ok
-    with
-    | _ -> Error "Failed to append events to repository"
+    with _ ->
+        Error "Failed to append events to repository"

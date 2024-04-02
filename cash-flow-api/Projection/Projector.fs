@@ -1,4 +1,4 @@
-module Examensarbete.Evnets.EventStore
+module Examensarbete.Projection.WalletProjector
 
 open System
 open Examensarbete.Events.Events
@@ -11,8 +11,12 @@ let applyEvent (state: Wallet) (event: WalletEvent) =
             id = e.id
             owner = e.owner }
     | WalletEvent.Removed _ -> Wallet.Empty
-    | WalletEvent.Deposited e -> { state with balance = state.balance + e.amount }
-    | WalletEvent.Withdrawn e -> { state with balance = state.balance - e.amount }
+    | WalletEvent.Deposited e ->
+        { state with
+            balance = state.balance + e.amount }
+    | WalletEvent.Withdrawn e ->
+        { state with
+            balance = state.balance - e.amount }
 
 let buildState events =
     List.fold applyEvent Wallet.Empty events

@@ -15,6 +15,8 @@
     <Compile Include="Commands/Wallet.fs" />
     <Compile Include="Storage/Repository.fs" />
     <Compile Include="Commands/Handler.fs" />
+    <Compile Include="Extensions/Minimal-api.fs" />
+    <Compile Include="Endpoints/WalletEndpoints.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

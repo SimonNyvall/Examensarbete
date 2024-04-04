@@ -20,4 +20,5 @@ let mapWallet (wallet: WalletProjection.Wallet) : Wallet =
       balance = wallet.balance }
 
 let toJson (wallet: WalletProjection.Wallet) =
-    JsonSerializer.Serialize(mapWallet wallet)
+    let options = JsonSerializerOptions(WriteIndented = true)
+    JsonSerializer.Serialize(mapWallet wallet, options)

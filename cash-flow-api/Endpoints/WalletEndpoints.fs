@@ -26,12 +26,14 @@ let private execute (answer: string) (command: Command) : IResult =
         | Error message -> Results.BadRequest message
 
 let mapWalletEndpoints (app: WebApplication) =
-    mapGet "/api/wallet/{id:guid}" app (fun _ id ->
-        let walletId = WalletId id
+    mapGet "/api/wallet" app (fun context ->
+        let walletId = WalletId(Guid.Parse(context.Request.Query.["id"].ToString()))
 
         let walletEventStream = getEventStream walletId
 
         let wallet = buildState walletEventStream
+
+        printfn "Wallet: %A" wallet
 
         Results.Ok(toJson wallet))
     |> ignore
@@ -40,8 +42,7 @@ let mapWalletEndpoints (app: WebApplication) =
         let walletId = WalletId(Guid.NewGuid())
         let userId = UserId(Guid.NewGuid())
 
-        CreateWallet { id = walletId; owner = userId }
-        |> execute "Wallet created")
+        CreateWallet { id = walletId; owner = userId } |> execute "Wallet created")
     |> ignore
 
     mapPut "/api/wallet/{id:guid}" app (fun context id userId ->
@@ -75,8 +76,7 @@ let mapWalletEndpoints (app: WebApplication) =
     mapDelete "/api/wallet/{id:guid}" app (fun _ id ->
         let walletId = WalletId id
 
-        RemoveWallet { id = walletId }
-        |> execute "Wallet removed")
+        RemoveWallet { id = walletId } |> execute "Wallet removed")
     |> ignore
 
     app

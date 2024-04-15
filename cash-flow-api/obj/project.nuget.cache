@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "SvMc/ndSlqAfXA4wms159vtMKY9BF9dMX/KiOgnuDLl8P6uw48DI0QcfL6GRWv31NaanWuYmc7Zd1miUUjpeHw==",
+  "dgSpecHash": "B6iZJrxY38n4s60D3jmJPdkC/0NC+Fi3xQRv/XOoz7LnNrLUn2uCtw7rUkgU8kZp9sTyIVmgCSOCKZfeZFtl2A==",
   "success": true,
   "projectFilePath": "/home/cap/Code/Examensarbete/cash-flow-api/cash-flow-api.fsproj",
   "expectedPackageFiles": [
     "/home/cap/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/home/cap/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
     "/home/cap/.nuget/packages/fsharp.core/8.0.100/fsharp.core.8.0.100.nupkg.sha512",
+    "/home/cap/.nuget/packages/fstoolkit.errorhandling/4.15.1/fstoolkit.errorhandling.4.15.1.nupkg.sha512",
     "/home/cap/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/home/cap/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/home/cap/.nuget/packages/microsoft.data.sqlclient/5.2.0/microsoft.data.sqlclient.5.2.0.nupkg.sha512",

@@ -11,17 +11,28 @@
     <Compile Include="Projection/WalletProjection.fs" />
     <Compile Include="Output/Wallet.fs" />
     <Compile Include="Evnets/Events.fs" />
-    <Compile Include="Projection/Projector.fs" />
+    <Compile Include="Projection/WalletExpencesProjector.fs" />
+    <Compile Include="Projection/WalletBalanceProjector.fs" />
     <Compile Include="Commands/Wallet.fs" />
     <Compile Include="Storage/Repository.fs" />
     <Compile Include="Commands/Handler.fs" />
-    <Compile Include="Extensions/Minimal-api.fs" />
-    <Compile Include="Endpoints/WalletEndpoints.fs" />
+    <Compile Include="Commands/Validation.fs" />
+    <Compile Include="Handlers/GetHandlers/CurrentWalletHandlers.fs" />
+    <Compile Include="Handlers/GetHandlers/HistoricalWalletHandler.fs" />
+    <Compile Include="Handlers/PostHandlers/CreateWalletHandlers.fs" />
+    <Compile Include="Handlers/DeleteHandlers/DeleteWalletHandler.fs" />
+    <Compile Include="Handlers/PutHandlers/DepositWalletHandler.fs" />
+    <Compile Include="Handlers/PutHandlers/WithdrawWalletHandler.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FsToolkit.ErrorHandling" Version="4.15.1" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vortex\src\Vortex.fsproj" />
   </ItemGroup>
 
 </Project>

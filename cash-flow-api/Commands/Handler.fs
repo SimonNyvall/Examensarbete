@@ -1,6 +1,7 @@
 module Examensarbete.Commands.WalletHandler
 
 open Examensarbete.Events.Events
+open Examensarbete.Core.Ids
 open Examensarbete.Commands.WalletCommand
 open Examensarbete.Storage.Repository
 
@@ -9,8 +10,7 @@ let private executeCreateWallet (create: CreateWallet) : Result =
     |> tryAppendEvents create.id
 
 let private executeRemoveWallet (remove: RemoveWallet) =
-    [ WalletEvent.Removed { id = remove.id } ]
-    |> tryAppendEvents remove.id
+    [ WalletEvent.Removed { id = remove.id } ] |> tryAppendEvents remove.id
 
 let private executeDepositWallet (deposit: DepositWallet) =
     [ WalletEvent.Deposited

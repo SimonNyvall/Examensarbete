@@ -15,3 +15,7 @@ type WalletId =
     member this.value =
         let (WalletId value) = this
         value
+
+type Result =
+    | Ok
+    | Error of string

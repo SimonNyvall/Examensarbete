@@ -1,6 +1,5 @@
-module Examensarbete.Projection.WalletProjector
+module Examensarbete.Projection.WalletBalanceProjector
 
-open System
 open Examensarbete.Events.Events
 open Examensarbete.Projection.WalletProjection
 
@@ -20,8 +19,3 @@ let applyEvent (state: Wallet) (event: WalletEvent) =
 
 let buildState events =
     List.fold applyEvent Wallet.Empty events
-
-type EventStore =
-    { id: Guid
-      type': string
-      data: string }

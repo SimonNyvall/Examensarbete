@@ -4,7 +4,11 @@ namespace cash_flow_api
 
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Hosting
-open Examensarbete.Endpoints.WalletEndpoints
+open Vortex.Api
+open Examensarbete.Handlers.GetHandlers
+open Examensarbete.Handlers.PostHandlers
+open Examensarbete.Handlers.PutHandlers
+open Examensarbete.Handlers.DeleteHandlers
 
 module Program =
     let exitCode = 0
@@ -16,7 +20,14 @@ module Program =
 
         let app = builder.Build()
 
-        mapWalletEndpoints app
+        app
+        |> mapGet "/api/wallet/current" CurrentWalletHandler.handler
+        |> mapGet "/api/wallet/historical" HistoricalWalletHandler.handler
+        |> mapPost "/api/wallet" CreateWalletHandler.handler
+        |> mapPut "/api/wallet/withdraw" WithdrawWalletHandler.handler
+        |> mapPut "/api/wallet/deposit" DepositWalletHandler.handler
+        |> mapDelete "/api/wallet" DeleteWalletHandler.handler
+
 
         app.Run()
 

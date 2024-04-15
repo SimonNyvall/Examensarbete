@@ -1,8 +1,6 @@
 module Examensarbete.Commands.WalletCommand
 
-open System
 open Examensarbete.Core.Ids
-open System.Security.Claims
 
 type Money = decimal
 
@@ -19,6 +17,8 @@ type WithdrawWallet =
     { id: WalletId
       owner: UserId
       amount: Money }
+
+type Validated<'T> = { command: 'T }
 
 type Command =
     | CreateWallet of CreateWallet

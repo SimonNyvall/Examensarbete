@@ -151,3 +151,9 @@
 /home/cap/Code/Examensarbete/cash-flow-api/obj/Debug/net8.0/cash-flow-api.fsproj.CopyComplete
 /home/cap/Code/Examensarbete/cash-flow-api/obj/Debug/net8.0/cash-flow-api.genruntimeconfig.cache
 /home/cap/Code/Examensarbete/cash-flow-api/obj/Debug/net8.0/ref/cash-flow-api.dll
+/home/cap/Code/Examensarbete/cash-flow-api/bin/Debug/net8.0/Vortex.deps.json
+/home/cap/Code/Examensarbete/cash-flow-api/bin/Debug/net8.0/Vortex.runtimeconfig.json
+/home/cap/Code/Examensarbete/cash-flow-api/bin/Debug/net8.0/Vortex
+/home/cap/Code/Examensarbete/cash-flow-api/bin/Debug/net8.0/Vortex.dll
+/home/cap/Code/Examensarbete/cash-flow-api/bin/Debug/net8.0/Vortex.pdb
+/home/cap/Code/Examensarbete/cash-flow-api/bin/Debug/net8.0/Vortex.xml

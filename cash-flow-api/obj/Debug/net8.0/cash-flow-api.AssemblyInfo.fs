@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("cash-flow-api")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63e1c09e6053f03317dcc0e60846af757074e86c")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("cash-flow-api")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("cash-flow-api")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

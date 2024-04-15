@@ -100,6 +100,22 @@
           }
         }
       },
+      "FsToolkit.ErrorHandling/4.15.1": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "7.0.300"
+        },
+        "compile": {
+          "lib/netstandard2.1/FsToolkit.ErrorHandling.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/FsToolkit.ErrorHandling.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -690,6 +706,22 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "Vortex/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FSharp.Core": "8.0.100"
+        },
+        "compile": {
+          "bin/placeholder/Vortex.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Vortex.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -776,6 +808,62 @@
         "lib/netstandard2.1/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "FsToolkit.ErrorHandling/4.15.1": {
+      "sha512": "zf8o4N954UWhkVQd2tc1u65sjSxZJ8WGprZJcfh1Hmp4OfXcTEnKX0DjMY2yET+BzvsLKembgGq9HBChFYeTlQ==",
+      "type": "package",
+      "path": "fstoolkit.errorhandling/4.15.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fable/AssemblyInfo.fs",
+        "fable/Async.fs",
+        "fable/AsyncOption.fs",
+        "fable/AsyncOptionCE.fs",
+        "fable/AsyncOptionOp.fs",
+        "fable/AsyncResult.fs",
+        "fable/AsyncResultCE.fs",
+        "fable/AsyncResultOp.fs",
+        "fable/AsyncResultOption.fs",
+        "fable/AsyncResultOptionCE.fs",
+        "fable/AsyncResultOptionOp.fs",
+        "fable/AsyncValidation.fs",
+        "fable/AsyncValidationCE.fs",
+        "fable/AsyncValidationOp.fs",
+        "fable/FsToolkit.ErrorHandling.fsproj",
+        "fable/List.fs",
+        "fable/Option.fs",
+        "fable/OptionCE.fs",
+        "fable/OptionOp.fs",
+        "fable/Result.fs",
+        "fable/ResultCE.fs",
+        "fable/ResultOp.fs",
+        "fable/ResultOption.fs",
+        "fable/ResultOptionCE.fs",
+        "fable/ResultOptionOp.fs",
+        "fable/Seq.fs",
+        "fable/Shims.fs",
+        "fable/Validation.fs",
+        "fable/ValidationCE.fs",
+        "fable/ValidationOp.fs",
+        "fable/ValueOption.fs",
+        "fable/ValueOptionCE.fs",
+        "fable/obj/Debug/netstandard2.1/.NETStandard,Version=v2.1.AssemblyAttributes.fs",
+        "fable/obj/Debug/netstandard2.1/FsToolkit.ErrorHandling.AssemblyInfo.fs",
+        "fable/obj/Release/netstandard2.0/.NETStandard,Version=v2.0.AssemblyAttributes.fs",
+        "fable/obj/Release/netstandard2.0/FsToolkit.ErrorHandling.AssemblyInfo.fs",
+        "fable/obj/Release/netstandard2.1/.NETStandard,Version=v2.1.AssemblyAttributes.fs",
+        "fable/obj/Release/netstandard2.1/FsToolkit.ErrorHandling.AssemblyInfo.fs",
+        "fstoolkit.errorhandling.4.15.1.nupkg.sha512",
+        "fstoolkit.errorhandling.nuspec",
+        "lib/netstandard2.0/FsToolkit.ErrorHandling.dll",
+        "lib/netstandard2.0/FsToolkit.ErrorHandling.pdb",
+        "lib/netstandard2.0/FsToolkit.ErrorHandling.xml",
+        "lib/netstandard2.1/FsToolkit.ErrorHandling.dll",
+        "lib/netstandard2.1/FsToolkit.ErrorHandling.pdb",
+        "lib/netstandard2.1/FsToolkit.ErrorHandling.xml"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -1973,12 +2061,19 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Vortex/1.0.0": {
+      "type": "project",
+      "path": "../Vortex/src/Vortex.fsproj",
+      "msbuildProject": "../Vortex/src/Vortex.fsproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "FSharp.Core >= 8.0.100",
-      "Microsoft.Data.SqlClient >= 5.2.0"
+      "FsToolkit.ErrorHandling >= 4.15.1",
+      "Microsoft.Data.SqlClient >= 5.2.0",
+      "Vortex >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2007,7 +2102,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/cap/Code/Examensarbete/Vortex/src/Vortex.fsproj": {
+              "projectPath": "/home/cap/Code/Examensarbete/Vortex/src/Vortex.fsproj"
+            }
+          }
         }
       }
     },
@@ -2020,6 +2119,10 @@
             "target": "Package",
             "version": "[8.0.100, )",
             "generatePathProperty": true
+          },
+          "FsToolkit.ErrorHandling": {
+            "target": "Package",
+            "version": "[4.15.1, )"
           },
           "Microsoft.Data.SqlClient": {
             "target": "Package",

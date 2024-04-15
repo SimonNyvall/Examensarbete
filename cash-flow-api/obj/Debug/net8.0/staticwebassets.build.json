@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "Wv2heiUWz8ARG3Y7rWvKbFYYGbj3CjIuM7BHEiVjSrc=",
+  "Hash": "xX8Fj7wO9TXgMVlT9Ih/KUPLTk7ezd4EmeKD6ht90SE=",
   "Source": "cash-flow-api",
   "BasePath": "_content/cash-flow-api",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/home/cap/Code/Examensarbete/Vortex/src/Vortex.fsproj",
+      "Version": 2,
+      "Source": "Vortex",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }

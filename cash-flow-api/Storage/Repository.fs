@@ -6,9 +6,6 @@ open Examensarbete.Events.Events
 // TODO save this to a sql database
 // maybe use this a cache later on
 
-type Result =
-    | Ok
-    | Error of string
 
 let mutable private storedEvents: Map<WalletId, WalletEvent list> = Map.empty
 

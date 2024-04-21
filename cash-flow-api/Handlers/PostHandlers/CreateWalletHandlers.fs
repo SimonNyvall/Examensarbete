@@ -5,6 +5,7 @@ open Vortex.Api
 open Examensarbete.Core.Ids
 open Examensarbete.Commands.WalletCommand
 open Examensarbete.Commands.WalletHandler
+open Examensarbete.Commands.Validation
 open Microsoft.AspNetCore.Http
 
 let handler: RequestResponse =
@@ -13,6 +14,7 @@ let handler: RequestResponse =
         let userId = UserId(Guid.NewGuid())
 
         CreateWallet { id = walletId; owner = userId }
+        |> validateCommand
         |> handle
         |> function
             | Ok -> Results.Ok("Wallet created")

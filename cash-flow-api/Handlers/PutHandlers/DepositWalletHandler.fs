@@ -5,6 +5,7 @@ open Vortex.Http
 open Examensarbete.Core.Ids
 open Examensarbete.Commands.WalletCommand
 open Examensarbete.Commands.WalletHandler
+open Examensarbete.Commands.Validation
 open Microsoft.AspNetCore.Http
 
 let handler: RequestResponse =
@@ -17,6 +18,7 @@ let handler: RequestResponse =
             { id = walletId
               amount = amount
               owner = userId }
+        |> validateCommand
         |> handle
         |> function
             | Ok -> Results.Ok("Deposited")

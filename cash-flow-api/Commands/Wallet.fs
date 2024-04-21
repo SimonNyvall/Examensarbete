@@ -6,7 +6,7 @@ type Money = decimal
 
 type CreateWallet = { id: WalletId; owner: UserId }
 
-type RemoveWallet = { id: WalletId }
+type RemoveWallet = { id: WalletId; owner: UserId }
 
 type DepositWallet =
     { id: WalletId

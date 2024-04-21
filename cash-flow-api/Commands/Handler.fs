@@ -5,30 +5,38 @@ open Examensarbete.Core.Ids
 open Examensarbete.Commands.WalletCommand
 open Examensarbete.Storage.Repository
 
-let private executeCreateWallet (create: CreateWallet) : Result =
-    [ WalletEvent.Created { id = create.id; owner = create.owner } ]
-    |> tryAppendEvents create.id
 
-let private executeRemoveWallet (remove: RemoveWallet) =
-    [ WalletEvent.Removed { id = remove.id } ] |> tryAppendEvents remove.id
+let private executeCreateWallet (create: Validated<CreateWallet>) : Result =
+    [ WalletEvent.Created
+          { id = create.command.id
+            owner = create.command.owner } ]
+    |> tryAppendEvents create.command.id
 
-let private executeDepositWallet (deposit: DepositWallet) =
+
+let private executeRemoveWallet (remove: Validated<RemoveWallet>) =
+    [ WalletEvent.Removed { id = remove.command.id } ]
+    |> tryAppendEvents remove.command.id
+
+
+let private executeDepositWallet (deposit: Validated<DepositWallet>) =
     [ WalletEvent.Deposited
-          { id = deposit.id
-            owner = deposit.owner
-            amount = deposit.amount } ]
-    |> tryAppendEvents deposit.id
+          { id = deposit.command.id
+            owner = deposit.command.owner
+            amount = deposit.command.amount } ]
+    |> tryAppendEvents deposit.command.id
 
-let private executeWithdrawWallet (withdraw: WithdrawWallet) =
+
+let private executeWithdrawWallet (withdraw: Validated<WithdrawWallet>) =
     [ WalletEvent.Withdrawn
-          { id = withdraw.id
-            owner = withdraw.owner
-            amount = withdraw.amount } ]
-    |> tryAppendEvents withdraw.id
+          { id = withdraw.command.id
+            owner = withdraw.command.owner
+            amount = withdraw.command.amount } ]
+    |> tryAppendEvents withdraw.command.id
 
-let handle (command: Command) =
-    match command with
-    | CreateWallet create -> executeCreateWallet create
-    | RemoveWallet remove -> executeRemoveWallet remove
-    | DepositWallet deposit -> executeDepositWallet deposit
-    | WithdrawWallet withdraw -> executeWithdrawWallet withdraw
+
+let handle (validated: Validated<Command>) =
+    match validated.command with
+    | CreateWallet create -> executeCreateWallet { command = create }
+    | RemoveWallet remove -> executeRemoveWallet { command = remove }
+    | DepositWallet deposit -> executeDepositWallet { command = deposit }
+    | WithdrawWallet withdraw -> executeWithdrawWallet { command = withdraw }
